@@ -32,7 +32,7 @@ lazy val kafkaVersion         = "4.2.0"
 lazy val embeddedKafkaVersion = "4.2.0" // Should be the same as kafkaVersion, except for the patch part
 
 lazy val kafkaClients = "org.apache.kafka" % "kafka-clients"   % kafkaVersion
-lazy val logback      = "ch.qos.logback"   % "logback-classic" % "1.5.32"
+lazy val logback      = "ch.qos.logback"   % "logback-classic" % "1.5.34"
 
 enablePlugins(ZioSbtEcosystemPlugin, ZioSbtCiPlugin)
 
@@ -215,7 +215,7 @@ lazy val docs = project
   .settings(
     moduleName := "zio-kafka-docs",
     // Reset scala options, warning are okay in the docs
-    scalacOptions := Seq("--encoding", "utf8", "--feature"),
+    scalacOptions                              := Seq("--encoding", "utf8", "--feature"),
     projectName                                := "ZIO Kafka",
     mainModuleName                             := (zioKafka / moduleName).value,
     projectStage                               := ProjectStage.ProductionReady,
